@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Wpf.Ui.Appearance;
 
+using LiveCaptionsTranslator.i18n;
 using LiveCaptionsTranslator.models;
 using LiveCaptionsTranslator.utils;
 using Wpf.Ui.Controls;
@@ -24,12 +25,61 @@ namespace LiveCaptionsTranslator
             {
                 (App.Current.MainWindow as MainWindow)?.AutoHeightAdjust(maxHeight: (int)App.Current.MainWindow.MinHeight);
                 CheckForFirstUse();
+                LocalizationService.Instance.LanguageChanged += UpdateLiveCaptionsButtonText;
+            };
+            Unloaded += (s, e) =>
+            {
+                LocalizationService.Instance.LanguageChanged -= UpdateLiveCaptionsButtonText;
             };
 
             TranslateAPIBox.ItemsSource = Translator.Setting?.Configs.Keys;
             TranslateAPIBox.SelectedIndex = 0;
 
             LoadAPISetting();
+            InitializeLanguageSelector();
+        }
+
+        private void InitializeLanguageSelector()
+        {
+            string current = Translator.Setting?.Language ?? "";
+            foreach (var item in LanguageBox.Items.OfType<ComboBoxItem>())
+            {
+                if (string.Equals(item.Tag as string, current, StringComparison.OrdinalIgnoreCase))
+                {
+                    LanguageBox.SelectedItem = item;
+                    return;
+                }
+            }
+            LanguageBox.SelectedIndex = 0;
+        }
+
+        private void LanguageBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LanguageBox.SelectedItem is not ComboBoxItem item)
+                return;
+
+            string code = item.Tag as string ?? "";
+            if (Translator.Setting.Language == code)
+                return;
+
+            Translator.Setting.Language = code;
+            LocalizationService.Instance.Apply(code);
+        }
+
+        private void UpdateLiveCaptionsButtonText()
+        {
+            if (Translator.Window == null)
+                return;
+
+            try
+            {
+                bool visible = Translator.Window.Current.BoundingRectangle != Rect.Empty;
+                ButtonText.Text = LocalizationService.Instance.T(visible ? "L_Setting_Hide" : "L_Setting_Show");
+            }
+            catch
+            {
+                // LiveCaptions window may be temporarily unavailable.
+            }
         }
 
         private void LiveCaptionsButton_click(object sender, RoutedEventArgs e)
@@ -37,20 +87,13 @@ namespace LiveCaptionsTranslator
             if (Translator.Window == null)
                 return;
 
-            var button = sender as Wpf.Ui.Controls.Button;
-            var text = ButtonText.Text;
-
             bool isHide = Translator.Window.Current.BoundingRectangle == Rect.Empty;
             if (isHide)
-            {
                 LiveCaptionsHandler.RestoreLiveCaptions(Translator.Window);
-                ButtonText.Text = "Hide";
-            }
             else
-            {
                 LiveCaptionsHandler.HideLiveCaptions(Translator.Window);
-                ButtonText.Text = "Show";
-            }
+
+            ButtonText.Text = LocalizationService.Instance.T(isHide ? "L_Setting_Hide" : "L_Setting_Show");
         }
 
         private void TranslateAPIBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -158,7 +201,7 @@ namespace LiveCaptionsTranslator
         private void CheckForFirstUse()
         {
             if (Translator.FirstUseFlag)
-                ButtonText.Text = "Hide";
+                ButtonText.Text = LocalizationService.Instance.T("L_Setting_Hide");
         }
 
         public void LoadAPISetting()

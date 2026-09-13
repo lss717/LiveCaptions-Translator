@@ -24,6 +24,7 @@ namespace LiveCaptionsTranslator.models
         private string apiName;
         private string targetLanguage;
         private string prompt;
+        private string language = "";
         private string? ignoredUpdateVersion;
 
         private MainWindowState mainWindowState;
@@ -96,6 +97,15 @@ namespace LiveCaptionsTranslator.models
             {
                 prompt = value;
                 OnPropertyChanged("Prompt");
+            }
+        }
+        public string Language
+        {
+            get => language;
+            set
+            {
+                language = value ?? "";
+                OnPropertyChanged("Language");
             }
         }
         public string? IgnoredUpdateVersion

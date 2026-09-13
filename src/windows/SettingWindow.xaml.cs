@@ -6,6 +6,7 @@ using Wpf.Ui.Appearance;
 using Wpf.Ui.Controls;
 
 using LiveCaptionsTranslator.apis;
+using LiveCaptionsTranslator.i18n;
 using LiveCaptionsTranslator.models;
 using Button = Wpf.Ui.Controls.Button;
 using TextBlock = Wpf.Ui.Controls.TextBlock;
@@ -154,7 +155,11 @@ namespace LiveCaptionsTranslator
 
                 if (string.IsNullOrWhiteSpace(baseUrl))
                 {
-                    System.Windows.MessageBox.Show("Please set the API URL first.", "Load Models", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                    System.Windows.MessageBox.Show(
+                        LocalizationService.Instance.T("L_Api_LoadModels_NoUrl"),
+                        LocalizationService.Instance.T("L_Api_LoadModels_Title"),
+                        System.Windows.MessageBoxButton.OK,
+                        System.Windows.MessageBoxImage.Warning);
                     return;
                 }
 
@@ -167,9 +172,17 @@ namespace LiveCaptionsTranslator
                     {
                         comboBox.ItemsSource = models;
                         if (models.Count > 0)
-                            System.Windows.MessageBox.Show($"Loaded {models.Count} model(s).", "Load Models", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+                            System.Windows.MessageBox.Show(
+                                LocalizationService.Instance.T("L_Api_LoadModels_Loaded", models.Count),
+                                LocalizationService.Instance.T("L_Api_LoadModels_Title"),
+                                System.Windows.MessageBoxButton.OK,
+                                System.Windows.MessageBoxImage.Information);
                         else
-                            System.Windows.MessageBox.Show("No models found or unable to connect. Check that the server is running.", "Load Models", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                            System.Windows.MessageBox.Show(
+                                LocalizationService.Instance.T("L_Api_LoadModels_None"),
+                                LocalizationService.Instance.T("L_Api_LoadModels_Title"),
+                                System.Windows.MessageBoxButton.OK,
+                                System.Windows.MessageBoxImage.Warning);
                     }
                 }
                 finally

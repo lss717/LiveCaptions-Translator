@@ -5,6 +5,7 @@ using Microsoft.Win32;
 using Wpf.Ui.Appearance;
 using Wpf.Ui.Controls;
 
+using LiveCaptionsTranslator.i18n;
 using LiveCaptionsTranslator.models;
 using LiveCaptionsTranslator.utils;
 using TextBlock = System.Windows.Controls.TextBlock;
@@ -27,19 +28,34 @@ namespace LiveCaptionsTranslator
             InitializeComponent();
             ApplicationThemeManager.ApplySystemTheme();
 
+            ApplyLocalizedHeaders();
+
             Loaded += async (s, e) =>
             {
                 await LoadHistory();
                 (App.Current.MainWindow as MainWindow)?.AutoHeightAdjust(minHeight: MIN_HEIGHT, maxHeight: MIN_HEIGHT);
                 Translator.TranslationLogged += OnTranslationLogged;
+                LocalizationService.Instance.LanguageChanged += ApplyLocalizedHeaders;
             };
             Unloaded += (s, e) =>
             {
                 HistoryDataGrid.ItemsSource = null;
                 Translator.TranslationLogged -= OnTranslationLogged;
+                LocalizationService.Instance.LanguageChanged -= ApplyLocalizedHeaders;
             };
 
             HistoryMaxRow.SelectionChanged += maxRow_SelectionChanged;
+        }
+
+        private void ApplyLocalizedHeaders()
+        {
+            if (HistoryDataGrid.Columns.Count < 4)
+                return;
+
+            HistoryDataGrid.Columns[0].Header = LocalizationService.Instance.T("L_History_Col_Time");
+            HistoryDataGrid.Columns[1].Header = LocalizationService.Instance.T("L_History_Col_Caption");
+            HistoryDataGrid.Columns[2].Header = LocalizationService.Instance.T("L_History_Col_Translated");
+            HistoryDataGrid.Columns[3].Header = LocalizationService.Instance.T("L_History_Col_Api");
         }
 
         private async void OnTranslationLogged()
@@ -69,13 +85,13 @@ namespace LiveCaptionsTranslator
             {
                 Title = new TextBlock
                 {
-                    Text = "Do you want to delete all history?",
+                    Text = LocalizationService.Instance.T("L_History_DeleteConfirm_Title"),
                     FontSize = 18,
                     FontWeight = FontWeights.Regular
                 },
-                Content = "This operation cannot be undone!",
-                PrimaryButtonText = "Yes",
-                CloseButtonText = "No",
+                Content = LocalizationService.Instance.T("L_History_DeleteConfirm_Content"),
+                PrimaryButtonText = LocalizationService.Instance.T("L_History_DeleteConfirm_Yes"),
+                CloseButtonText = LocalizationService.Instance.T("L_History_DeleteConfirm_No"),
                 DefaultButton = ContentDialogButton.Close,
                 DialogHost = dialogHostContainer,
                 Padding = new Thickness(8, 4, 8, 8),
@@ -116,7 +132,7 @@ namespace LiveCaptionsTranslator
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Filter = "CSV (*.csv)|*.csv|All file (*.*)|*.*",
+                Filter = LocalizationService.Instance.T("L_History_Export_Filter"),
                 DefaultExt = ".csv",
                 FileName = $"exported_{DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss")}.csv",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
@@ -127,11 +143,17 @@ namespace LiveCaptionsTranslator
                 try
                 {
                     await SQLiteHistoryLogger.ExportToCSV(saveFileDialog.FileName);
-                    SnackbarHost.Show("Saved Success.", $"File saved to: {saveFileDialog.FileName}", SnackbarType.Success);
+                    SnackbarHost.Show(
+                        LocalizationService.Instance.T("L_History_Export_Success"),
+                        LocalizationService.Instance.T("L_History_Export_SavedTo", saveFileDialog.FileName),
+                        SnackbarType.Success);
                 }
                 catch (Exception ex)
                 {
-                    SnackbarHost.Show("Save Failed.", $"File saved faild:{ex.Message}", SnackbarType.Error);
+                    SnackbarHost.Show(
+                        LocalizationService.Instance.T("L_History_Export_Failed"),
+                        LocalizationService.Instance.T("L_History_Export_FailedDetail", ex.Message),
+                        SnackbarType.Error);
                 }
             }
         }

@@ -1,0 +1,197 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <!--  Main Window  -->
+    <sys:String x:Key="L_App_Title">LiveCaptions Translator</sys:String>
+    <sys:String x:Key="L_Nav_Caption">Caption</sys:String>
+    <sys:String x:Key="L_Nav_Setting">Setting</sys:String>
+    <sys:String x:Key="L_Nav_History">History</sys:String>
+    <sys:String x:Key="L_Nav_Info">Info</sys:String>
+    <sys:String x:Key="L_Main_LogCards_Tooltip">Log Cards of Captions</sys:String>
+    <sys:String x:Key="L_Main_Pause_Tooltip">Pause Translation (Log Only)</sys:String>
+    <sys:String x:Key="L_Main_Overlay_Tooltip">Overlay Window</sys:String>
+    <sys:String x:Key="L_Main_Topmost_Tooltip">Always on Top</sys:String>
+
+    <!--  Caption Page  -->
+    <sys:String x:Key="L_Caption_CopyTooltip">Click to Copy, Ctrl+Scroll to Resize Font</sys:String>
+    <sys:String x:Key="L_Caption_CopyTooltipShort">Click To Copy</sys:String>
+
+    <!--  Setting Page  -->
+    <sys:String x:Key="L_Setting_LiveCaptions">LiveCaptions</sys:String>
+    <sys:String x:Key="L_Setting_ApiInterval">API Interval</sys:String>
+    <sys:String x:Key="L_Setting_TranslateApi">Translate API</sys:String>
+    <sys:String x:Key="L_Setting_TargetLanguage">Target Language</sys:String>
+    <sys:String x:Key="L_Setting_ApiSetting">API Setting</sys:String>
+    <sys:String x:Key="L_Setting_Open">Open</sys:String>
+    <sys:String x:Key="L_Setting_ShowLatency">Show Latency</sys:String>
+    <sys:String x:Key="L_Setting_Contexts">Contexts</sys:String>
+    <sys:String x:Key="L_Setting_DisplaySentences">Display Sentences</sys:String>
+    <sys:String x:Key="L_Setting_ContextAware">Context Aware</sys:String>
+    <sys:String x:Key="L_Setting_Show">Show</sys:String>
+    <sys:String x:Key="L_Setting_Hide">Hide</sys:String>
+    <sys:String x:Key="L_Setting_Off">Off</sys:String>
+    <sys:String x:Key="L_Setting_On">On</sys:String>
+    <sys:String x:Key="L_Setting_Language">Language</sys:String>
+    <sys:String x:Key="L_Setting_FollowSystem">Follow System</sys:String>
+
+    <sys:String x:Key="L_Setting_LCInfo_1">After Windows 11 version 24H2, you can only change the</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_2">Source Language</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_3">in LiveCaptions.</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_4">&#x0A;&#x0A;Note:</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_5">Please click</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_6">"Hide"</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_7">to hide LiveCaptions instead of closing it directly.</sys:String>
+
+    <sys:String x:Key="L_Setting_FreqInfo_1">Determines the frequency of translate API calls. The smaller it is, the more frequent API calls.</sys:String>
+    <sys:String x:Key="L_Setting_FreqInfo_2">&#x0A;The translate API is called once after the caption changes</sys:String>
+    <sys:String x:Key="L_Setting_FreqInfo_3">[API Interval]</sys:String>
+    <sys:String x:Key="L_Setting_FreqInfo_4">times.</sys:String>
+
+    <sys:String x:Key="L_Setting_ApiInfo">Except for Google and Google2, all other APIs require configuring before they can be used.</sys:String>
+
+    <sys:String x:Key="L_Setting_TLInfo_1">"There isn't the target language I expect!"</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_2">&#x0A;You can directly edit the content of this combobox to customize the language, and it is recommended to follow the</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_3">BCP 47 language tag.</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_4">&#x0A;&#x0A;Note:</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_5">Some of APIs (such as DeepL) needs another way to define target language, see their official docs for more details.</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_6">&#x0A;No need to consider this for included target languages, since we've built in tag mappings. But if your expected language isn't in the list, keep this in mind.</sys:String>
+
+    <sys:String x:Key="L_Setting_CLMInfo_1">Contexts:</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_2">Determines the number of context sentences when</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_3">Context Aware</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_4">is enabled.</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_5">&#x0A;Overlay Sentences:</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_6">Determines the number of displayed cards when</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_7">Log Cards</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_8">is enabled, as well as the max number of sentences displayed in the Overlay Window.</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_9">&#x0A;&#x0A;Note:</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_10">Contexts must be</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_11">greater than or equal</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_12">Display Sentences. If not met, the program will automatically adjust them.</sys:String>
+
+    <sys:String x:Key="L_Setting_CAInfo_1">Translate in context.</sys:String>
+    <sys:String x:Key="L_Setting_CAInfo_2">&#x0A;It can improve translation accuracy, but will consume more tokens.</sys:String>
+
+    <!--  History Page  -->
+    <sys:String x:Key="L_History_Prev_Tooltip">Previous</sys:String>
+    <sys:String x:Key="L_History_Next_Tooltip">Next Page</sys:String>
+    <sys:String x:Key="L_History_Export_Tooltip">Export</sys:String>
+    <sys:String x:Key="L_History_Delete_Tooltip">Delete All</sys:String>
+    <sys:String x:Key="L_History_Refresh_Tooltip">Refresh</sys:String>
+    <sys:String x:Key="L_History_Search_Placeholder">Search</sys:String>
+    <sys:String x:Key="L_History_PageSize_20">20/page</sys:String>
+    <sys:String x:Key="L_History_PageSize_30">30/page</sys:String>
+    <sys:String x:Key="L_History_PageSize_50">50/page</sys:String>
+    <sys:String x:Key="L_History_PageSize_100">100/page</sys:String>
+    <sys:String x:Key="L_History_Col_Time">Time</sys:String>
+    <sys:String x:Key="L_History_Col_Caption">Caption</sys:String>
+    <sys:String x:Key="L_History_Col_Translated">Translated</sys:String>
+    <sys:String x:Key="L_History_Col_Api">API</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_Title">Do you want to delete all history?</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_Content">This operation cannot be undone!</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_Yes">Yes</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_No">No</sys:String>
+    <sys:String x:Key="L_History_Export_Success">Saved Success.</sys:String>
+    <sys:String x:Key="L_History_Export_SavedTo">File saved to: {0}</sys:String>
+    <sys:String x:Key="L_History_Export_Failed">Save Failed.</sys:String>
+    <sys:String x:Key="L_History_Export_FailedDetail">File save failed: {0}</sys:String>
+    <sys:String x:Key="L_History_Export_Filter">CSV (*.csv)|*.csv|All file (*.*)|*.*</sys:String>
+
+    <!--  Info Page  -->
+    <sys:String x:Key="L_Info_Intro_1">We welcome any form of contribution! You can provide suggestions or report bugs via GitHub issues, or contribute code directly by submitting Pull Requests.</sys:String>
+    <sys:String x:Key="L_Info_Intro_2">&#x0A;If this program is helpful to you, please consider giving us a star ✨!</sys:String>
+    <sys:String x:Key="L_Info_Repo">Repository:</sys:String>
+    <sys:String x:Key="L_Info_Wiki">Wiki:</sys:String>
+    <sys:String x:Key="L_Info_Maintainer">Maintainer:</sys:String>
+    <sys:String x:Key="L_Info_AuthorAnd">(Author) and</sys:String>
+    <sys:String x:Key="L_Info_Version">Version:</sys:String>
+
+    <!--  Overlay Window  -->
+    <sys:String x:Key="L_Overlay_Title">Overlay Window</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_FontIncrease">Font Size Increase</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_FontDecrease">Font Size Decrease</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_StrokeIncrease">Font Stroke Increase</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_StrokeDecrease">Font Stroke Decrease</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_Bold">Font Bold</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_FontColor">Font Color</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_OpacityIncrease">Background Opacity Increase</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_OpacityDecrease">Background Opacity Decrease</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_BgColor">Background Color</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_OnlyMode">Show only subtitles or translations</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_SwitchMode">Switch the order of subtitles and translations</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_ClickThrough">Click Through</sys:String>
+
+    <!--  API Setting Window  -->
+    <sys:String x:Key="L_Api_Title">API Setting</sys:String>
+    <sys:String x:Key="L_Api_Nav_Prompt">Prompt</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Heading">Prompt</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note1">Note 1:</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note1Text">The {0} in the prompt indicates the target language, so make sure your prompt includes {0}.</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note2">&#x0A;Note 2:</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note2Text">The source text is enclosed with 🔤.</sys:String>
+    <sys:String x:Key="L_Api_CurrentConfig">Current Config: </sys:String>
+    <sys:String x:Key="L_Api_New">New</sys:String>
+    <sys:String x:Key="L_Api_Delete">Delete</sys:String>
+    <sys:String x:Key="L_Api_DeleteFlyout">You must keep at least one config.</sys:String>
+    <sys:String x:Key="L_Api_ModelName">Model Name</sys:String>
+    <sys:String x:Key="L_Api_Temperature">Temperature</sys:String>
+    <sys:String x:Key="L_Api_ApiUrl">API Url</sys:String>
+    <sys:String x:Key="L_Api_ApiUrlBase">API Url (Base)</sys:String>
+    <sys:String x:Key="L_Api_ApiKey">API Key</sys:String>
+    <sys:String x:Key="L_Api_AppKey">APP Key</sys:String>
+    <sys:String x:Key="L_Api_AppSecret">APP Secret</sys:String>
+    <sys:String x:Key="L_Api_AppId">APP ID</sys:String>
+    <sys:String x:Key="L_Api_SourceLanguage">Source Language</sys:String>
+    <sys:String x:Key="L_Api_LoadModels">Load Models</sys:String>
+    <sys:String x:Key="L_Api_Ollama_Info_1">No need to explicitly add</sys:String>
+    <sys:String x:Key="L_Api_Ollama_Info_2">`api/chat`</sys:String>
+    <sys:String x:Key="L_Api_Ollama_Info_3">suffix.</sys:String>
+    <sys:String x:Key="L_Api_LMStudio_Info_1">Base URL ending with</sys:String>
+    <sys:String x:Key="L_Api_LMStudio_Info_2">`api/v1`</sys:String>
+    <sys:String x:Key="L_Api_LMStudio_Info_3">. Chat endpoint and models are appended automatically.</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_1">Use Full Url (typically ending with</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_2">`v1/chat/completions`</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_3">) instead of Base Url (typically ending with just</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_4">`v1`</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_5">).</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_Title">Load Models</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_NoUrl">Please set the API URL first.</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_Loaded">Loaded {0} model(s).</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_None">No models found or unable to connect. Check that the server is running.</sys:String>
+
+    <!--  Welcome Window  -->
+    <sys:String x:Key="L_Welcome_Title">Getting Started</sys:String>
+    <sys:String x:Key="L_Welcome_Heading">Welcome to LiveCaptions Translator!</sys:String>
+    <sys:String x:Key="L_Welcome_Body_1">LiveCaptions Translator is based on Windows LiveCaptions.</sys:String>
+    <sys:String x:Key="L_Welcome_Body_2">Before your first running, you need to configure it according to the following steps:&#x0A;</sys:String>
+    <sys:String x:Key="L_Welcome_Body_3">&#x0A;1. Open Windows LiveCaptions and follow the guide to download the necessary files for on-device speech recognition and language packs.</sys:String>
+    <sys:String x:Key="L_Welcome_Body_4">&#x0A;2. Click the</sys:String>
+    <sys:String x:Key="L_Welcome_Body_5">⚙️ gear</sys:String>
+    <sys:String x:Key="L_Welcome_Body_6">icon in Windows LiveCaptions to open the settings menu, and select</sys:String>
+    <sys:String x:Key="L_Welcome_Body_7">"Position &gt; Overlaid on screen"</sys:String>
+    <sys:String x:Key="L_Welcome_Body_8">.&#x0A;3. Click the</sys:String>
+    <sys:String x:Key="L_Welcome_Body_9">"Hide"</sys:String>
+    <sys:String x:Key="L_Welcome_Body_10">button located in the setting page of LiveCaptions Translator to hide Windows LiveCaptions.&#x0A;</sys:String>
+    <sys:String x:Key="L_Welcome_Body_11">&#x0A;The program has automatically navigated to the setting page and opened Windows LiveCaptions.</sys:String>
+    <sys:String x:Key="L_Welcome_Body_12">After completing the configuration, you can switch back to the main page and enjoy real-time audio translation.&#x0A;</sys:String>
+    <sys:String x:Key="L_Welcome_Body_13">&#x0A;For more details, visit our wiki: </sys:String>
+    <sys:String x:Key="L_Welcome_Body_14">&#x0A;&#x0A;Tip:</sys:String>
+    <sys:String x:Key="L_Welcome_Body_15">To change the</sys:String>
+    <sys:String x:Key="L_Welcome_Body_16">Source Language</sys:String>
+    <sys:String x:Key="L_Welcome_Body_17">, please [Show] LiveCaptions on the setting page and do it in Windows LiveCaptions.</sys:String>
+    <sys:String x:Key="L_Welcome_Button">I have fully understood and configured.</sys:String>
+
+    <!--  Runtime messages  -->
+    <sys:String x:Key="L_Main_UpdateFailed">[ERROR] Update Check Failed.</sys:String>
+    <sys:String x:Key="L_Main_OpenBrowserFailed">[ERROR] Open Browser Failed.</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Title">New Version Available</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Content">A new version has been detected: {0}&#x0A;Current version: {1}&#x0A;Please visit GitHub to download the latest release.</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Update">Update</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Ignore">Ignore this version</sys:String>
+    <sys:String x:Key="L_Caption_Copied">Copied.</sys:String>
+    <sys:String x:Key="L_Caption_CopyFailed">Copy Failed.</sys:String>
+    <sys:String x:Key="L_Log_HistoryFailed">[ERROR] Logging history failed.</sys:String>
+
+</ResourceDictionary>

@@ -4,6 +4,7 @@ using System.Windows;
 using Wpf.Ui.Appearance;
 using Wpf.Ui.Controls;
 
+using LiveCaptionsTranslator.i18n;
 using LiveCaptionsTranslator.utils;
 using LiveCaptionsTranslator.Utils;
 using Button = Wpf.Ui.Controls.Button;
@@ -180,7 +181,7 @@ namespace LiveCaptionsTranslator
             }
             catch (Exception ex)
             {
-                SnackbarHost.Show("[ERROR] Update Check Failed.", ex.Message, SnackbarType.Error,
+                SnackbarHost.Show(LocalizationService.Instance.T("L_Main_UpdateFailed"), ex.Message, SnackbarType.Error,
                     timeout: 2, closeButton: true);
 
                 return;
@@ -194,12 +195,10 @@ namespace LiveCaptionsTranslator
             {
                 var dialog = new Wpf.Ui.Controls.MessageBox
                 {
-                    Title = "New Version Available",
-                    Content = $"A new version has been detected: {latestVersion}\n" +
-                              $"Current version: {currentVersion}\n" +
-                              $"Please visit GitHub to download the latest release.",
-                    PrimaryButtonText = "Update",
-                    CloseButtonText = "Ignore this version"
+                    Title = LocalizationService.Instance.T("L_Main_NewVersion_Title"),
+                    Content = LocalizationService.Instance.T("L_Main_NewVersion_Content", latestVersion, currentVersion),
+                    PrimaryButtonText = LocalizationService.Instance.T("L_Main_NewVersion_Update"),
+                    CloseButtonText = LocalizationService.Instance.T("L_Main_NewVersion_Ignore")
                 };
                 var result = await dialog.ShowDialogAsync();
 
@@ -216,7 +215,7 @@ namespace LiveCaptionsTranslator
                     }
                     catch (Exception ex)
                     {
-                        SnackbarHost.Show("[ERROR] Open Browser Failed.", ex.Message, SnackbarType.Error,
+                        SnackbarHost.Show(LocalizationService.Instance.T("L_Main_OpenBrowserFailed"), ex.Message, SnackbarType.Error,
                             timeout: 2, closeButton: true);
                     }
                 }

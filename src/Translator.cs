@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Automation;
 
 using LiveCaptionsTranslator.apis;
+using LiveCaptionsTranslator.i18n;
 using LiveCaptionsTranslator.models;
 using LiveCaptionsTranslator.utils;
 
@@ -295,7 +296,7 @@ namespace LiveCaptionsTranslator
             }
             catch (Exception ex)
             {
-                SnackbarHost.Show("[ERROR] Logging history failed.", ex.Message, SnackbarType.Error,
+                SnackbarHost.Show(LocalizationService.Instance.T("L_Log_HistoryFailed"), ex.Message, SnackbarType.Error,
                     timeout: 2, closeButton: true);
             }
         }
@@ -315,7 +316,7 @@ namespace LiveCaptionsTranslator
             }
             catch (Exception ex)
             {
-                SnackbarHost.Show("[ERROR] Logging history failed.", ex.Message, SnackbarType.Error,
+                SnackbarHost.Show(LocalizationService.Instance.T("L_Log_HistoryFailed"), ex.Message, SnackbarType.Error,
                     timeout: 2, closeButton: true);
             }
         }

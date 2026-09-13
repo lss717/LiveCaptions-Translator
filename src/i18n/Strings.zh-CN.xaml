@@ -1,0 +1,197 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <!--  主窗口  -->
+    <sys:String x:Key="L_App_Title">LiveCaptions Translator</sys:String>
+    <sys:String x:Key="L_Nav_Caption">字幕</sys:String>
+    <sys:String x:Key="L_Nav_Setting">设置</sys:String>
+    <sys:String x:Key="L_Nav_History">历史</sys:String>
+    <sys:String x:Key="L_Nav_Info">关于</sys:String>
+    <sys:String x:Key="L_Main_LogCards_Tooltip">字幕日志卡片</sys:String>
+    <sys:String x:Key="L_Main_Pause_Tooltip">暂停翻译（仅记录）</sys:String>
+    <sys:String x:Key="L_Main_Overlay_Tooltip">悬浮窗口</sys:String>
+    <sys:String x:Key="L_Main_Topmost_Tooltip">窗口置顶</sys:String>
+
+    <!--  字幕页  -->
+    <sys:String x:Key="L_Caption_CopyTooltip">点击复制，Ctrl+滚轮调整字号</sys:String>
+    <sys:String x:Key="L_Caption_CopyTooltipShort">点击复制</sys:String>
+
+    <!--  设置页  -->
+    <sys:String x:Key="L_Setting_LiveCaptions">实时字幕</sys:String>
+    <sys:String x:Key="L_Setting_ApiInterval">API 间隔</sys:String>
+    <sys:String x:Key="L_Setting_TranslateApi">翻译 API</sys:String>
+    <sys:String x:Key="L_Setting_TargetLanguage">目标语言</sys:String>
+    <sys:String x:Key="L_Setting_ApiSetting">API 设置</sys:String>
+    <sys:String x:Key="L_Setting_Open">打开</sys:String>
+    <sys:String x:Key="L_Setting_ShowLatency">显示延迟</sys:String>
+    <sys:String x:Key="L_Setting_Contexts">上下文数</sys:String>
+    <sys:String x:Key="L_Setting_DisplaySentences">显示句数</sys:String>
+    <sys:String x:Key="L_Setting_ContextAware">上下文感知</sys:String>
+    <sys:String x:Key="L_Setting_Show">显示</sys:String>
+    <sys:String x:Key="L_Setting_Hide">隐藏</sys:String>
+    <sys:String x:Key="L_Setting_Off">关</sys:String>
+    <sys:String x:Key="L_Setting_On">开</sys:String>
+    <sys:String x:Key="L_Setting_Language">语言</sys:String>
+    <sys:String x:Key="L_Setting_FollowSystem">跟随系统</sys:String>
+
+    <sys:String x:Key="L_Setting_LCInfo_1">在 Windows 11 版本 24H2 之后，你只能在实时字幕中更改</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_2">源语言</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_3">。</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_4">&#x0A;&#x0A;注意：</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_5">请点击</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_6">"隐藏"</sys:String>
+    <sys:String x:Key="L_Setting_LCInfo_7">来隐藏实时字幕，而不是直接关闭它。</sys:String>
+
+    <sys:String x:Key="L_Setting_FreqInfo_1">决定翻译 API 的调用频率。数值越小，调用越频繁。</sys:String>
+    <sys:String x:Key="L_Setting_FreqInfo_2">&#x0A;字幕每变化</sys:String>
+    <sys:String x:Key="L_Setting_FreqInfo_3">[API 间隔]</sys:String>
+    <sys:String x:Key="L_Setting_FreqInfo_4">次后，调用一次翻译 API。</sys:String>
+
+    <sys:String x:Key="L_Setting_ApiInfo">除 Google 和 Google2 外，其他 API 均需配置后才能使用。</sys:String>
+
+    <sys:String x:Key="L_Setting_TLInfo_1">"没有我想要的目标语言！"</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_2">&#x0A;你可以直接编辑此组合框的内容来自定义语言，建议遵循</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_3">BCP 47 语言标签。</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_4">&#x0A;&#x0A;注意：</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_5">某些 API（如 DeepL）需要另一种方式定义目标语言，详见其官方文档。</sys:String>
+    <sys:String x:Key="L_Setting_TLInfo_6">&#x0A;对于内置的目标语言无需担心，因为我们已经内置了标签映射。但如果你期望的语言不在列表中，请留意这一点。</sys:String>
+
+    <sys:String x:Key="L_Setting_CLMInfo_1">上下文数：</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_2">启用</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_3">上下文感知</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_4">时，决定上下文句子的数量。</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_5">&#x0A;悬浮句数：</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_6">启用</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_7">日志卡片</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_8">时，决定显示的卡片数量，同时也是悬浮窗口中显示的最大句子数。</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_9">&#x0A;&#x0A;注意：</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_10">上下文数必须</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_11">大于或等于</sys:String>
+    <sys:String x:Key="L_Setting_CLMInfo_12">显示句数。若不满足，程序会自动调整。</sys:String>
+
+    <sys:String x:Key="L_Setting_CAInfo_1">结合上下文进行翻译。</sys:String>
+    <sys:String x:Key="L_Setting_CAInfo_2">&#x0A;可提高翻译准确性，但会消耗更多 token。</sys:String>
+
+    <!--  历史页  -->
+    <sys:String x:Key="L_History_Prev_Tooltip">上一页</sys:String>
+    <sys:String x:Key="L_History_Next_Tooltip">下一页</sys:String>
+    <sys:String x:Key="L_History_Export_Tooltip">导出</sys:String>
+    <sys:String x:Key="L_History_Delete_Tooltip">全部删除</sys:String>
+    <sys:String x:Key="L_History_Refresh_Tooltip">刷新</sys:String>
+    <sys:String x:Key="L_History_Search_Placeholder">搜索</sys:String>
+    <sys:String x:Key="L_History_PageSize_20">20/页</sys:String>
+    <sys:String x:Key="L_History_PageSize_30">30/页</sys:String>
+    <sys:String x:Key="L_History_PageSize_50">50/页</sys:String>
+    <sys:String x:Key="L_History_PageSize_100">100/页</sys:String>
+    <sys:String x:Key="L_History_Col_Time">时间</sys:String>
+    <sys:String x:Key="L_History_Col_Caption">原文</sys:String>
+    <sys:String x:Key="L_History_Col_Translated">译文</sys:String>
+    <sys:String x:Key="L_History_Col_Api">API</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_Title">要删除全部历史记录吗？</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_Content">此操作无法撤销！</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_Yes">是</sys:String>
+    <sys:String x:Key="L_History_DeleteConfirm_No">否</sys:String>
+    <sys:String x:Key="L_History_Export_Success">保存成功。</sys:String>
+    <sys:String x:Key="L_History_Export_SavedTo">文件已保存至：{0}</sys:String>
+    <sys:String x:Key="L_History_Export_Failed">保存失败。</sys:String>
+    <sys:String x:Key="L_History_Export_FailedDetail">文件保存失败：{0}</sys:String>
+    <sys:String x:Key="L_History_Export_Filter">CSV (*.csv)|*.csv|所有文件 (*.*)|*.*</sys:String>
+
+    <!--  关于页  -->
+    <sys:String x:Key="L_Info_Intro_1">我们欢迎任何形式的贡献！你可以通过 GitHub issues 提供建议或报告 bug，也可以直接提交 Pull Request 贡献代码。</sys:String>
+    <sys:String x:Key="L_Info_Intro_2">&#x0A;如果这个程序对你有帮助，请考虑给我们一个 star ✨！</sys:String>
+    <sys:String x:Key="L_Info_Repo">仓库：</sys:String>
+    <sys:String x:Key="L_Info_Wiki">Wiki：</sys:String>
+    <sys:String x:Key="L_Info_Maintainer">维护者：</sys:String>
+    <sys:String x:Key="L_Info_AuthorAnd">（作者）和</sys:String>
+    <sys:String x:Key="L_Info_Version">版本：</sys:String>
+
+    <!--  悬浮窗口  -->
+    <sys:String x:Key="L_Overlay_Title">悬浮窗口</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_FontIncrease">增大字号</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_FontDecrease">减小字号</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_StrokeIncrease">增强描边</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_StrokeDecrease">减弱描边</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_Bold">加粗</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_FontColor">字体颜色</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_OpacityIncrease">增大背景不透明度</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_OpacityDecrease">减小背景不透明度</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_BgColor">背景颜色</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_OnlyMode">仅显示字幕或译文</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_SwitchMode">交换字幕与译文的顺序</sys:String>
+    <sys:String x:Key="L_Overlay_Tip_ClickThrough">点击穿透</sys:String>
+
+    <!--  API 设置窗口  -->
+    <sys:String x:Key="L_Api_Title">API 设置</sys:String>
+    <sys:String x:Key="L_Api_Nav_Prompt">提示词</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Heading">提示词</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note1">注意 1：</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note1Text">提示词中的 {0} 表示目标语言，请确保你的提示词包含 {0}。</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note2">&#x0A;注意 2：</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note2Text">源文本以 🔤 包裹。</sys:String>
+    <sys:String x:Key="L_Api_CurrentConfig">当前配置：</sys:String>
+    <sys:String x:Key="L_Api_New">新建</sys:String>
+    <sys:String x:Key="L_Api_Delete">删除</sys:String>
+    <sys:String x:Key="L_Api_DeleteFlyout">必须至少保留一个配置。</sys:String>
+    <sys:String x:Key="L_Api_ModelName">模型名称</sys:String>
+    <sys:String x:Key="L_Api_Temperature">温度</sys:String>
+    <sys:String x:Key="L_Api_ApiUrl">API 地址</sys:String>
+    <sys:String x:Key="L_Api_ApiUrlBase">API 地址（基础）</sys:String>
+    <sys:String x:Key="L_Api_ApiKey">API 密钥</sys:String>
+    <sys:String x:Key="L_Api_AppKey">应用 Key</sys:String>
+    <sys:String x:Key="L_Api_AppSecret">应用 Secret</sys:String>
+    <sys:String x:Key="L_Api_AppId">应用 ID</sys:String>
+    <sys:String x:Key="L_Api_SourceLanguage">源语言</sys:String>
+    <sys:String x:Key="L_Api_LoadModels">加载模型</sys:String>
+    <sys:String x:Key="L_Api_Ollama_Info_1">无需显式添加</sys:String>
+    <sys:String x:Key="L_Api_Ollama_Info_2">`api/chat`</sys:String>
+    <sys:String x:Key="L_Api_Ollama_Info_3">后缀。</sys:String>
+    <sys:String x:Key="L_Api_LMStudio_Info_1">以</sys:String>
+    <sys:String x:Key="L_Api_LMStudio_Info_2">`api/v1`</sys:String>
+    <sys:String x:Key="L_Api_LMStudio_Info_3">结尾的基础 URL。聊天端点和模型列表会自动追加。</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_1">请使用完整 URL（通常以</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_2">`v1/chat/completions`</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_3">结尾），而不是基础 URL（通常仅以</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_4">`v1`</sys:String>
+    <sys:String x:Key="L_Api_OpenAI_Info_5">结尾）。</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_Title">加载模型</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_NoUrl">请先设置 API 地址。</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_Loaded">已加载 {0} 个模型。</sys:String>
+    <sys:String x:Key="L_Api_LoadModels_None">未找到模型或无法连接。请检查服务器是否正在运行。</sys:String>
+
+    <!--  欢迎窗口  -->
+    <sys:String x:Key="L_Welcome_Title">开始使用</sys:String>
+    <sys:String x:Key="L_Welcome_Heading">欢迎使用 LiveCaptions Translator！</sys:String>
+    <sys:String x:Key="L_Welcome_Body_1">LiveCaptions Translator 基于 Windows 实时字幕。</sys:String>
+    <sys:String x:Key="L_Welcome_Body_2">首次运行前，你需要按以下步骤进行配置：&#x0A;</sys:String>
+    <sys:String x:Key="L_Welcome_Body_3">&#x0A;1. 打开 Windows 实时字幕，按照指引下载设备端语音识别和语言包所需的文件。</sys:String>
+    <sys:String x:Key="L_Welcome_Body_4">&#x0A;2. 点击 Windows 实时字幕中的</sys:String>
+    <sys:String x:Key="L_Welcome_Body_5">⚙️ 齿轮</sys:String>
+    <sys:String x:Key="L_Welcome_Body_6">图标打开设置菜单，然后选择</sys:String>
+    <sys:String x:Key="L_Welcome_Body_7">"位置 &gt; 覆盖在屏幕上"</sys:String>
+    <sys:String x:Key="L_Welcome_Body_8">。&#x0A;3. 点击 LiveCaptions Translator 设置页中的</sys:String>
+    <sys:String x:Key="L_Welcome_Body_9">"隐藏"</sys:String>
+    <sys:String x:Key="L_Welcome_Body_10">按钮以隐藏 Windows 实时字幕。&#x0A;</sys:String>
+    <sys:String x:Key="L_Welcome_Body_11">&#x0A;程序已自动跳转到设置页并打开 Windows 实时字幕。</sys:String>
+    <sys:String x:Key="L_Welcome_Body_12">完成配置后，即可切换回主页面，享受实时音频翻译。&#x0A;</sys:String>
+    <sys:String x:Key="L_Welcome_Body_13">&#x0A;更多详情，请访问我们的 wiki：</sys:String>
+    <sys:String x:Key="L_Welcome_Body_14">&#x0A;&#x0A;提示：</sys:String>
+    <sys:String x:Key="L_Welcome_Body_15">如需更改</sys:String>
+    <sys:String x:Key="L_Welcome_Body_16">源语言</sys:String>
+    <sys:String x:Key="L_Welcome_Body_17">，请在设置页 [显示] 实时字幕，并在 Windows 实时字幕中进行更改。</sys:String>
+    <sys:String x:Key="L_Welcome_Button">我已充分了解并完成配置。</sys:String>
+
+    <!--  运行时消息  -->
+    <sys:String x:Key="L_Main_UpdateFailed">[错误] 更新检查失败。</sys:String>
+    <sys:String x:Key="L_Main_OpenBrowserFailed">[错误] 打开浏览器失败。</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Title">有新版本可用</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Content">检测到新版本：{0}&#x0A;当前版本：{1}&#x0A;请前往 GitHub 下载最新版本。</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Update">更新</sys:String>
+    <sys:String x:Key="L_Main_NewVersion_Ignore">忽略此版本</sys:String>
+    <sys:String x:Key="L_Caption_Copied">已复制。</sys:String>
+    <sys:String x:Key="L_Caption_CopyFailed">复制失败。</sys:String>
+    <sys:String x:Key="L_Log_HistoryFailed">[错误] 记录历史失败。</sys:String>
+
+</ResourceDictionary>
