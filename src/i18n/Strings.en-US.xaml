@@ -131,6 +131,9 @@
     <sys:String x:Key="L_Api_Prompt_Note1Text">The {0} in the prompt indicates the target language, so make sure your prompt includes {0}.</sys:String>
     <sys:String x:Key="L_Api_Prompt_Note2">&#x0A;Note 2:</sys:String>
     <sys:String x:Key="L_Api_Prompt_Note2Text">The source text is enclosed with 🔤.</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note3">&#x0A;Note 3:</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note3Text">Each LLM config can have its own prompt. If it is left empty, the global prompt above will be used instead.</sys:String>
+    <sys:String x:Key="L_Api_Prompt">Prompt</sys:String>
     <sys:String x:Key="L_Api_CurrentConfig">Current Config: </sys:String>
     <sys:String x:Key="L_Api_New">New</sys:String>
     <sys:String x:Key="L_Api_Delete">Delete</sys:String>

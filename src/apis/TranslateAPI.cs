@@ -45,6 +45,9 @@ namespace LiveCaptionsTranslator.apis
         public static bool IsLLMBased => LLM_BASED_APIS.Contains(Translator.Setting.ApiName);
         public static string Prompt => Translator.Setting.Prompt;
 
+        private static string ResolvePrompt(BaseLLMConfig config) =>
+            string.IsNullOrWhiteSpace(config.Prompt) ? Prompt : config.Prompt;
+
         private static readonly HttpClient client = new HttpClient()
         {
             Timeout = TimeSpan.FromSeconds(8)
@@ -59,7 +62,7 @@ namespace LiveCaptionsTranslator.apis
 
             var messages = new List<BaseLLMConfig.Message>
             {
-                new BaseLLMConfig.Message { role = "system", content = string.Format(Prompt, language) },
+                new BaseLLMConfig.Message { role = "system", content = string.Format(ResolvePrompt(config), language) },
                 new BaseLLMConfig.Message { role = "user", content = $"🔤 {text} 🔤" }
             };
 
@@ -138,7 +141,7 @@ namespace LiveCaptionsTranslator.apis
 
             var messages = new List<BaseLLMConfig.Message>
             {
-                new BaseLLMConfig.Message { role = "system", content = string.Format(Prompt, language) },
+                new BaseLLMConfig.Message { role = "system", content = string.Format(ResolvePrompt(config), language) },
                 new BaseLLMConfig.Message { role = "user", content = $"🔤 {text} 🔤" }
             };
 
@@ -199,7 +202,7 @@ namespace LiveCaptionsTranslator.apis
                 Translator.Setting.TargetLanguage, out var langValue) ? langValue : Translator.Setting.TargetLanguage;
             string apiUrl = TextUtil.NormalizeUrl(config.ApiUrl) + "/chat";
 
-            string systemPrompt = string.Format(Prompt, language);
+            string systemPrompt = string.Format(ResolvePrompt(config), language);
 
             // Build input with optional context
             string input = $"🔤 {text} 🔤";
@@ -287,7 +290,7 @@ namespace LiveCaptionsTranslator.apis
 
             var messages = new List<BaseLLMConfig.Message>
             {
-                new BaseLLMConfig.Message { role = "system", content = string.Format(Prompt, language) },
+                new BaseLLMConfig.Message { role = "system", content = string.Format(ResolvePrompt(config), language) },
                 new BaseLLMConfig.Message { role = "user", content = $"🔤 {text} 🔤" }
             };
 

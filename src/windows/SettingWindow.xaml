@@ -213,6 +213,8 @@
                                             <Run Text="{DynamicResource L_Api_Prompt_Note1Text}" />
                                             <Run FontWeight="Bold" Text="{DynamicResource L_Api_Prompt_Note2}" />
                                             <Run Text="{DynamicResource L_Api_Prompt_Note2Text}" />
+                                            <Run FontWeight="Bold" Text="{DynamicResource L_Api_Prompt_Note3}" />
+                                            <Run Text="{DynamicResource L_Api_Prompt_Note3Text}" />
                                         </ui:TextBlock>
                                         <ui:TextBox
                                             x:Name="PromptTextBox"
@@ -352,6 +354,17 @@
                                                     Text="{Binding [Ollama].ApiUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </StackPanel>
                                         </Grid>
+                                        <StackPanel Margin="15,15,0,0" Orientation="Vertical">
+                                            <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource L_Api_Prompt}" />
+                                            <ui:TextBox
+                                                MinHeight="64"
+                                                AcceptsReturn="True"
+                                                ClearButtonEnabled="False"
+                                                FontSize="13.3"
+                                                TextWrapping="Wrap"
+                                                VerticalScrollBarVisibility="Auto"
+                                                Text="{Binding [Ollama].Prompt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
                                     </StackPanel>
                                 </ui:Card>
                             </StackPanel>
@@ -504,6 +517,17 @@
                                                     Text="{Binding [LMStudio].ApiUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </StackPanel>
                                         </Grid>
+                                        <StackPanel Margin="15,15,0,0" Orientation="Vertical">
+                                            <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource L_Api_Prompt}" />
+                                            <ui:TextBox
+                                                MinHeight="64"
+                                                AcceptsReturn="True"
+                                                ClearButtonEnabled="False"
+                                                FontSize="13.3"
+                                                TextWrapping="Wrap"
+                                                VerticalScrollBarVisibility="Auto"
+                                                Text="{Binding [LMStudio].Prompt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
                                     </StackPanel>
                                 </ui:Card>
                             </StackPanel>
@@ -652,6 +676,17 @@
                                                     Text="{Binding [OpenAI].ApiKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </StackPanel>
                                         </Grid>
+                                        <StackPanel Margin="15,15,0,0" Orientation="Vertical">
+                                            <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource L_Api_Prompt}" />
+                                            <ui:TextBox
+                                                MinHeight="64"
+                                                AcceptsReturn="True"
+                                                ClearButtonEnabled="False"
+                                                FontSize="13.3"
+                                                TextWrapping="Wrap"
+                                                VerticalScrollBarVisibility="Auto"
+                                                Text="{Binding [OpenAI].Prompt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
                                     </StackPanel>
                                 </ui:Card>
                             </StackPanel>
@@ -763,6 +798,17 @@
                                                     Text="{Binding [OpenRouter].ApiKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </StackPanel>
                                         </Grid>
+                                        <StackPanel Margin="15,15,0,0" Orientation="Vertical">
+                                            <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource L_Api_Prompt}" />
+                                            <ui:TextBox
+                                                MinHeight="64"
+                                                AcceptsReturn="True"
+                                                ClearButtonEnabled="False"
+                                                FontSize="13.3"
+                                                TextWrapping="Wrap"
+                                                VerticalScrollBarVisibility="Auto"
+                                                Text="{Binding [OpenRouter].Prompt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
                                     </StackPanel>
                                 </ui:Card>
                             </StackPanel>

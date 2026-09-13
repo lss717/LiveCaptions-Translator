@@ -131,6 +131,9 @@
     <sys:String x:Key="L_Api_Prompt_Note1Text">提示词中的 {0} 表示目标语言，请确保你的提示词包含 {0}。</sys:String>
     <sys:String x:Key="L_Api_Prompt_Note2">&#x0A;注意 2：</sys:String>
     <sys:String x:Key="L_Api_Prompt_Note2Text">源文本以 🔤 包裹。</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note3">&#x0A;注意 3：</sys:String>
+    <sys:String x:Key="L_Api_Prompt_Note3Text">每个 LLM 配置都可以设置自己的提示词。若留空，则改用上方的全局提示词。</sys:String>
+    <sys:String x:Key="L_Api_Prompt">提示词</sys:String>
     <sys:String x:Key="L_Api_CurrentConfig">当前配置：</sys:String>
     <sys:String x:Key="L_Api_New">新建</sys:String>
     <sys:String x:Key="L_Api_Delete">删除</sys:String>
