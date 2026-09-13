@@ -9,7 +9,7 @@
 ### *Real-time audio/speech translation tool based on Windows LiveCaptions*
 
 [![Master Build](https://github.com/SakiRinn/LiveCaptions-Translator/actions/workflows/dotnet-build.yml/badge.svg?branch=master)](https://github.com/SakiRinn/LiveCaptions-Translator/actions/workflows/dotnet-build.yml)
-[![GitHub Release](https://img.shields.io/github/v/release/SakiRinn/LiveCaptions-Translator?label=Latest&color=yellow)](https://github.com/SakiRinn/LiveCaptions-Translator/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/lss717/LiveCaptions-Translator?label=Latest&color=yellow)](https://github.com/lss717/LiveCaptions-Translator/releases/latest)
 [![Windows 11](https://img.shields.io/badge/platform-Windows11-blue?logo=windows11&style=&color=1E9BFA)](https://www.microsoft.com/en-us/software-download/windows11)
 [![GitHub License](https://img.shields.io/github/license/SakiRinn/LiveCaptions-Translator)](https://github.com/SakiRinn/LiveCaptions-Translator/blob/master/LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/SakiRinn/LiveCaptions-Translator)](https://github.com/SakiRinn/LiveCaptions-Translator/stargazers)
@@ -26,7 +26,7 @@ This is a lightweight tool that seamlessly integrates translation APIs with Wind
 
 Windows' built-in LiveCaptions is easy to use, uses few resources, and has extremely high recognition accuracy. If empowering it with the awesome translation capabilities of LLMs, you will get... possibly the best real-time translator available to date!
 
-**🚀 Quick Start:** Download from [Releases](https://github.com/SakiRinn/LiveCaptions-Translator/releases) and start with a single click!
+**🚀 Quick Start:** Download from [Releases](https://github.com/lss717/LiveCaptions-Translator/releases) and start with a single click!
 
 <div align="center">
   <img src="images/preview.png" alt="Preview of LiveCaptions Translator" width="90%" />
@@ -58,6 +58,10 @@ Windows' built-in LiveCaptions is easy to use, uses few resources, and has extre
   Easy-to-use and clean Fluent UI aligned with modern Windows aesthetics.
 
   It can automatically switches between light and dark themes 🌓 based on the system setting.
+
+- **🌍 Multi-language Interface**
+
+  The interface supports multiple languages (English and Simplified Chinese). You can switch the language at runtime in the settings — no restart required.
 
 - **🌐 Multiple Translation Services**
 
@@ -207,7 +211,3 @@ After configuration, close Windows LiveCaptions and launch LiveCaptions Translat
     <img src="https://contrib.rocks/image?repo=SakiRinn/LiveCaptions-Translator" />
   </a>
 </div>
-
-### Star History
-
-[![Stargazers over time](https://starchart.cc/SakiRinn/LiveCaptions-Translator.svg?variant=adaptive)](https://starchart.cc/SakiRinn/LiveCaptions-Translator)

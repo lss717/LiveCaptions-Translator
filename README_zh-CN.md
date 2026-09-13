@@ -9,7 +9,7 @@
 ### *基于Windows实时字幕的实时音频/语音翻译工具*
 
 [![Master Build](https://github.com/SakiRinn/LiveCaptions-Translator/actions/workflows/dotnet-build.yml/badge.svg?branch=master)](https://github.com/SakiRinn/LiveCaptions-Translator/actions/workflows/dotnet-build.yml)
-[![GitHub Release](https://img.shields.io/github/v/release/SakiRinn/LiveCaptions-Translator?label=Latest&color=yellow)](https://github.com/SakiRinn/LiveCaptions-Translator/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/lss717/LiveCaptions-Translator?label=Latest&color=yellow)](https://github.com/lss717/LiveCaptions-Translator/releases/latest)
 [![Windows 11](https://img.shields.io/badge/platform-Windows11-blue?logo=windows11&style=&color=1E9BFA)](https://www.microsoft.com/en-us/software-download/windows11)
 [![GitHub License](https://img.shields.io/github/license/SakiRinn/LiveCaptions-Translator)](https://github.com/SakiRinn/LiveCaptions-Translator/blob/master/LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/SakiRinn/LiveCaptions-Translator)](https://github.com/SakiRinn/LiveCaptions-Translator/stargazers)
@@ -26,7 +26,7 @@
 
 Windows内置的实时字幕简单易用，资源占用少，且识别准确率极高。如果为其赋能LLM强大的翻译能力，你将获得...可能是目前最好的实时翻译器！
 
-**🚀 快速开始:** 从[发布页面](https://github.com/SakiRinn/LiveCaptions-Translator/releases)下载并一键启动！
+**🚀 快速开始:** 从[发布页面](https://github.com/lss717/LiveCaptions-Translator/releases)下载并一键启动！
 
 <div align="center">
   <img src="images/preview.png" alt="LiveCaptions Translator预览" width="90%" />
@@ -58,6 +58,10 @@ Windows内置的实时字幕简单易用，资源占用少，且识别准确率�
   易于使用且简洁的Fluent UI与现代Windows美学保持一致。
 
   它可以根据系统设置自动在浅色和深色主题🌓之间切换。
+
+- **🌍 多语言界面**
+
+  界面支持多种语言（英文与简体中文）。你可以在设置中运行时切换语言，无需重启。
 
 - **🌐 多种翻译服务**
 
@@ -207,7 +211,3 @@ Windows内置的实时字幕简单易用，资源占用少，且识别准确率�
     <img src="https://contrib.rocks/image?repo=SakiRinn/LiveCaptions-Translator" />
   </a>
 </div>
-
-### Star历史
-
-[![Stargazers over time](https://starchart.cc/SakiRinn/LiveCaptions-Translator.svg?variant=adaptive)](https://starchart.cc/SakiRinn/LiveCaptions-Translator)
